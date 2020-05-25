@@ -1,22 +1,30 @@
-var email = ["mail.test@gmail.com", "mail.test@outlook.com", "mail.test@hotmail.it", "mail.test@libero.it", "mail.test@virgilio.it"];
-var emailValida = false;
+//Lista email autorizzate
+var emailAutorizzate = ["mail.test@gmail.com", "mail.test@outlook.com", "mail.test@hotmail.it", "mail.test@libero.it", "mail.test@virgilio.it"];
 
-prompt("Inserisci una email valida")
+//Variabile di appoggio
+var emailUtenteValida = false;
 
-for (var i = 0; i < email.length; i++) {
+//Chiedo all'utente di inserire unae mail autorizzata
+var emailUtente = prompt("Inserisci una mail valida");
 
-  if (email[i] === email.length) {
-    emailValida = true;
+//Controllo che l' email inserita sia nella lista delle email autorizzate
+for (var i = 0; i < emailAutorizzate.length; i++) {
+
+  if (emailAutorizzate[i] === emailUtente) {
+
+    emailUtenteValida = true;
+
   }
 
 }
 
-
-if (emailValida) {
+//Stampo l'esito del controllo
+if (emailUtenteValida === true) {
 
   console.log("Successo!");
 
 } else {
 
   console.log("Credenziali errate!");
+
 }
